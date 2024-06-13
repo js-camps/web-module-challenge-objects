@@ -145,9 +145,14 @@ module.exports = {
 
 Run `npm run type-check` to perform type-checking.
 
-## Creat `codegrade_mvp.test.ts`
+## Step 7.  `codegrade_mvp.test.ts`
 
+## Run Test
 
+```sh
+tsc
+npm test
+```
 
 
 
