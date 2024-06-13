@@ -43,7 +43,7 @@ npm install --save-dev @babel/preset-typescript @types/node typescript
 "test:watch": "jest --watchAll --verbose --forceExit --silent"
 ```    
 
-## Step 2: Configure Babel
+## Step 2: Create and configure Babel
 
 Create or modify the babel.config.js file to include the @babel/preset-typescript preset.
 
