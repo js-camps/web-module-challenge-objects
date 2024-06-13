@@ -66,6 +66,12 @@ module.exports = {
 
 ## Step 3. Create `tsconfig.json`
 
+- Create the `tsconfig.json` file manually:
+
+```
+touch tsconfig.json
+```
+
 This file is used by the TypeScript compiler to understand the TypeScript-specific options, even though Babel will handle the actual compilation.
 
 ```ts
