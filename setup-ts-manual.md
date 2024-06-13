@@ -36,7 +36,7 @@ npm install --save-dev @babel/preset-typescript @types/node typescript
 -   Update the scripts of `package.json`
 
 ```
-"build": "webpack",
+"build": "babel src --extensions \".ts,.js\" --out-dir dist",
 "start": "nodemon index.js",
 "type-check": "tsc --noEmit",
 "test": "jest --watchAll --verbose --forceExit --silent",
@@ -97,30 +97,37 @@ Create a `src` directory for your TypeScript source files and a `dist` directory
 ```sh
 mkdir src dist
 ```
+Sample Project Structure
+
+```lua
+my-typescript-project/
+├── babel.config.js
+├── jest.config.js
+├── package.json
+├── tsconfig.json
+├── src/
+│   ├── index.ts
+│   └── otherFiles.ts
+├── codegrade_mvp.test.ts
+├── dist/
+```
 
 Move your existing files into the `src` directory and update their extensions to `.ts` where appropriate.
 
-## Step 5. Update Package Scripts
 
-Update the `scripts` section of your `package.json` to include build and start commands using Babel and Node.
-
-```
-{
-  "scripts": {
-    "build": "babel src --extensions \".ts,.js\" --out-dir dist",
-  }
-}
-```
-
-## Step 6. Configure Jest for TypeScript
+## Step 5. Configure Jest for TypeScript
 
 If you’re using Jest for testing, you need to configure it to handle TypeScript. Install the necessary dependencies:
 
 ```
-npm install --save-dev ts-jest @types/jest
+npm install --save-dev ts-jest
 ```
 
 Create or update `jest.config.js` to use `ts-jest`.
+
+```
+touch jest.config.js
+```
 
 ```
 module.exports = {
@@ -134,48 +141,15 @@ module.exports = {
 };
 ```
 
-## Step 7. Type-Checking with `tsc`
-
-Since Babel does not perform type-checking, you should use the TypeScript compiler (`tsc`) for type-checking. Add a script in your `package.json` to run type-checking:
-
-```
-{
-  "scripts": {
-    "type-check": "tsc --noEmit"
-  }
-}
-```
+## Step 6. Type-Checking with `tsc`
 
 Run `npm run type-check` to perform type-checking.
 
-## Step 8 creat `jest.config.js`
+## Creat `codegrade_mvp.test.ts`
 
-```
-module.exports = {
-    preset: 'ts-jest',
-    testEnvironment: 'node',
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-    transform: {
-      '^.+\\.tsx?$': 'ts-jest',
-    },
-    testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)'],
-  };
-  
-```
 
-## Step 9. Sample Project Structure
 
-```lua
-my-typescript-project/
-├── babel.config.js
-├── jest.config.js
-├── package.json
-├── tsconfig.json
-├── src/
-│   ├── index.ts
-│   └── otherFiles.ts
-├── dist/
-```
+
 
 **Final Notes**
 1.  **Compilation**: Babel will compile your TypeScript code to JavaScript, but you need to rely on TypeScript (`tsc`) for type-checking.
