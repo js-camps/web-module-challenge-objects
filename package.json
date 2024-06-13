@@ -1,0 +1,22 @@
+{
+  "name": "web-module-challenge-objects",
+  "version": "1.0.0",
+  "description": "Javascript Typescript Objectives",
+  "scripts": {
+    "build": "webpack",
+    "start": "nodemon index.js",
+    "type-check": "tsc --noEmit",
+    "test": "jest --watchAll --verbose --forceExit --silent",
+    "test:watch": "jest --watchAll --verbose --forceExit --silent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js-camps/web-module-challenge-objects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/js-camps/web-module-challenge-objects/issues"
+  },
+  "homepage": "https://github.com/js-camps/web-module-challenge-objects#readme"
+}
