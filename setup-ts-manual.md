@@ -24,7 +24,7 @@ npx gitignore node
 
 
 ```
-npm install --save-dev @babel/core @babel/plugin-transform-runtime @babel/preset-env @babel/runtime nodemon @types/jest jest eslint
+npm install --save-dev @babel/core @babel/cli @babel/plugin-transform-runtime @babel/preset-env @babel/runtime nodemon @types/jest jest eslint
 ```
 
 - Install the necessary dependencies for ts
@@ -43,15 +43,17 @@ npm install --save-dev @babel/preset-typescript @types/node typescript
 "test:watch": "jest --watchAll --verbose --forceExit --silent"
 ```    
 
-**3. Create the project structure:**
-
-```
-touch babel.config.js index.js
-```
-
 ## Step 2: Configure Babel
 
 Create or modify the babel.config.js file to include the @babel/preset-typescript preset.
+
+- Create the `babel.config.js` file manually:
+
+```
+touch babel.config.js
+```
+
+- make sure the babel.config.js file to include the @babel/preset-typescript preset.
 
 ```js
 module.exports = {
